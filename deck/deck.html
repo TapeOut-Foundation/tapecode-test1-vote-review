@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Test1 NFT 设计大赛 · 投票复核</title>
+<style>
+:root{
+  --bg:#0a0e19; --bg2:#10172a; --panel:#151d33; --line:#26314f;
+  --text:#e9edf8; --muted:#8f9ab8; --dim:#5d6888;
+  --a:#4da3ff;   /* 003 */
+  --b:#ff9a3d;   /* 056 */
+  --ok:#3ddc97; --bad:#ff5d6c; --warn:#ffd166;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#05070d;color:var(--text);font-family:"PingFang SC","Helvetica Neue","Noto Sans SC",system-ui,sans-serif;overflow:hidden}
+#stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+.slide{width:1280px;height:720px;position:absolute;left:50%;top:50%;transform-origin:center;background:
+  radial-gradient(900px 500px at 85% -10%,rgba(77,163,255,.16),transparent 60%),
+  radial-gradient(800px 500px at -10% 110%,rgba(255,154,61,.13),transparent 60%),
+  var(--bg);
+  padding:56px 72px;display:none;overflow:hidden}
+.slide.on{display:block}
+.slide::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;mask-image:linear-gradient(180deg,rgba(0,0,0,.9),transparent 85%)}
+.slide>*{position:relative}
+.eyebrow{font-size:14px;letter-spacing:.28em;color:var(--muted);text-transform:uppercase;font-weight:600}
+h1{font-size:60px;line-height:1.12;font-weight:800;letter-spacing:-.01em}
+h2{font-size:38px;line-height:1.2;font-weight:800;margin:10px 0 28px}
+h3{font-size:20px;font-weight:700}
+p,li{font-size:20px;line-height:1.55;color:#cdd4e8}
+.muted{color:var(--muted)}
+.a{color:var(--a)} .b{color:var(--b)} .ok{color:var(--ok)} .bad{color:var(--bad)} .warn{color:var(--warn)}
+.grid{display:grid;gap:20px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.015));border:1px solid var(--line);border-radius:16px;padding:22px 24px}
+.big{font-size:72px;font-weight:800;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.label{font-size:15px;color:var(--muted);margin-top:8px}
+.pill{display:inline-block;padding:3px 12px;border-radius:99px;font-size:14px;font-weight:700;border:1px solid currentColor}
+.foot{position:absolute;left:72px;right:72px;bottom:26px;display:flex;justify-content:space-between;font-size:13px;color:var(--dim)!important}
+.foot span{color:var(--dim)}
+table{border-collapse:collapse;width:100%}
+th,td{padding:10px 14px;text-align:left;font-size:18px;border-bottom:1px solid var(--line)}
+th{color:var(--muted);font-weight:600;font-size:14px;letter-spacing:.08em}
+td.n{text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
+.bar{height:34px;border-radius:8px}
+.row{display:flex;align-items:center;gap:16px}
+.arrow{color:var(--dim);font-size:28px}
+.nav{position:fixed;top:10px;right:16px;color:#4b5573;font-size:13px;z-index:10;user-select:none}
+.tag{font-size:13px;color:var(--bg);background:var(--muted);padding:2px 9px;border-radius:6px;font-weight:700}
+ul{padding-left:22px}
+li{margin:6px 0}
+b{color:var(--text)}
+@media print{
+  @page{size:1280px 720px;margin:0}
+  html,body{overflow:visible;height:auto;background:var(--bg)}
+  #stage{position:static;display:block}
+  .slide{display:block!important;position:relative;left:0;top:0;transform:none!important;page-break-after:always;break-after:page}
+  .nav{display:none}
+}
+</style>
+</head>
+<body>
+<div id="stage">
+
+<!-- 1 · 封面 -->
+<section class="slide on">
+  <div class="eyebrow">TapeOut Community Foundation</div>
+  <div style="margin-top:150px">
+    <div class="pill ok" style="margin-bottom:26px">投票复核报告</div>
+    <h1>Test1 NFT 设计大赛<br><span class="a">003</span> <span class="muted">vs</span> <span class="b">056</span><br>票，到底怎么数？</h1>
+    <p class="muted" style="margin-top:30px;font-size:22px">官方公示数据 × X 内容逐账号核查 × 敏感性分析</p>
+  </div>
+  <div class="foot"><span>数据来源：生产数据库历史选票公示（2026-10-24 14:38 UTC+8 导出）</span><span>2026-10-25</span></div>
+</section>
+
+<!-- 2 · 一页结论 -->
+<section class="slide">
+  <div class="eyebrow">Executive summary</div>
+  <h2>按基金会的标准复核后，<span class="a">003 71</span> : <span class="b">056 78</span>，<br>056 领先 7 票，边缘账号已由基金会逐个确认</h2>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:6px">
+    <div class="card"><div class="big"><span class="a">56</span> : <span class="b">45</span></div><div class="label">官方公示（历史严格票）<br>003 冠军</div></div>
+    <div class="card"><div class="big" style="color:var(--ok)">53</div><div class="label">未进入名单的账号全部逐个核查<br>（056 方 40 人 · 003 方 13 人）</div></div>
+    <div class="card"><div class="big"><span class="a">71</span> : <span class="b">78</span></div><div class="label">复核后（每个合格账号 3 票）<br>056 领先 7 票</div></div>
+  </div>
+  <ul style="margin-top:34px;font-size:20px">
+    <li>名单在第一轮就冻结，<b>后来才出现的 16 个账号（056 方 14、003 方 2）被流程性排除</b>，与其 X 内容无关</li>
+    <li>033 转投账号 <b>19 人逐个核查，0 人合格</b>：内容全是其他项目的任务型回复</li>
+    <li>@EasonOnly 等 <b>11 个 056 账号、5 个 003 账号</b>被判合格，每个都附推文链接</li>
+  </ul>
+  <div class="foot"><span>标准由基金会给定，本报告未自行增减</span><span>2 / 13</span></div>
+</section>
+
+<!-- 3 · 三层口径 -->
+<section class="slide">
+  <div class="eyebrow">How votes are counted</div>
+  <h2>公示表里有三套口径，越往下越严</h2>
+  <div class="grid" style="grid-template-columns:1fr 1fr 1fr;align-items:stretch">
+    <div class="card"><span class="tag">原始票</span><h3 style="margin:12px 0 8px">所有有效提交</h3><p>快照持有人 + 普通 1 票地址。决赛 342 票 / 170 人。</p></div>
+    <div class="card"><span class="tag" style="background:var(--a)">快照票</span><h3 style="margin:12px 0 8px">活动前资产快照内</h3><p>BEM ≥ 1、持 Test1 NFT、官方矿机、NAND/LATCH。每个合格地址 3 票。决赛 260 票 / 88 人。</p></div>
+    <div class="card"><span class="tag" style="background:var(--ok)">历史严格票</span><h3 style="margin:12px 0 8px">快照 + 67 人固定名单</h3><p>名单由 X 动态审核得出，<b>首轮前冻结</b>，之后三轮共用。决赛 101 票 / 35 人。</p></div>
+  </div>
+  <div class="card" style="margin-top:26px">
+    <div class="row" style="gap:26px">
+      <div style="font-size:15px;color:var(--muted);width:90px">决赛人数</div>
+      <div style="flex:1;display:flex;gap:6px;align-items:center">
+        <div class="bar" style="width:100%;background:#2a3452"></div>
+      </div>
+      <div style="width:60px;text-align:right;font-weight:700">170</div>
+    </div>
+    <div class="row" style="gap:26px;margin-top:10px"><div style="width:90px"></div><div class="bar" style="width:52%;background:var(--a)"></div><div style="font-weight:700">88</div></div>
+    <div class="row" style="gap:26px;margin-top:10px"><div style="width:90px"></div><div class="bar" style="width:21%;background:var(--ok)"></div><div style="font-weight:700">35</div></div>
+  </div>
+  <div class="foot"><span>来源：公示表《公示总览》</span><span>3 / 13</span></div>
+</section>
+
+<!-- 4 · 问题：名单冻结 -->
+<section class="slide">
+  <div class="eyebrow">What went wrong</div>
+  <h2>名单只来自第一轮的投票人，<br>后来的人没有被审核的机会</h2>
+  <div class="row" style="gap:18px;margin:6px 0 30px">
+    <div class="card" style="flex:1;text-align:center"><div class="big" style="font-size:56px">119</div><div class="label">第一轮快照持有人</div></div>
+    <div class="arrow">→ 审核 →</div>
+    <div class="card" style="flex:1;text-align:center;border-color:var(--ok)"><div class="big ok" style="font-size:56px">67</div><div class="label">进入固定名单</div></div>
+    <div class="card" style="flex:1;text-align:center;border-color:var(--bad)"><div class="big bad" style="font-size:56px">52</div><div class="label">未进入名单</div></div>
+  </div>
+  <div class="grid" style="grid-template-columns:1fr 1fr">
+    <div class="card"><h3 class="warn">结构性问题</h3><ul style="margin-top:8px"><li>严格有效投票人数 = 67，<b>正好等于第一轮名单</b></li><li>第 2、3 轮才第一次出现的快照账号：<b>056 方 14 人、003 方 2 人</b>——不论 X 上多活跃，按规则都「不在名单」</li></ul></div>
+    <div class="card"><h3 class="warn">通过率不对称</h3><ul style="margin-top:8px"><li>决赛快照持有人通过：<b class="a">003 61%</b>（20/33）</li><li>决赛快照持有人通过：<b class="b">056 27%</b>（15/55）</li><li>审核依据是「最近 30 条动态」的时点快照</li></ul></div>
+  </div>
+  <div class="foot"><span>推导：56 进 3 严格有效投票账号 = 67；决赛逐行核对</span><span>4 / 13</span></div>
+</section>
+
+<!-- 5 · 三种口径 -->
+<section class="slide">
+  <div class="eyebrow">Sensitivity</div>
+  <h2>同一份数据，三种口径，三种结果</h2>
+  <svg viewBox="0 0 1136 420" width="1136" height="420" style="margin-top:-6px">
+    <g font-size="16" fill="#8f9ab8" font-family="PingFang SC,sans-serif">
+      <line x1="60" y1="350" x2="1100" y2="350" stroke="#26314f"/>
+      <!-- scale: 165 -> 300px -->
+      <g>
+        <rect x="120" y="262" width="110" height="88" rx="8" fill="#4da3ff"/><text x="175" y="252" fill="#e9edf8" font-size="22" font-weight="700" text-anchor="middle">56</text>
+        <rect x="240" y="268" width="110" height="82" rx="8" fill="#ff9a3d"/><text x="295" y="258" fill="#e9edf8" font-size="22" font-weight="700" text-anchor="middle">45</text>
+        <text x="235" y="378" text-anchor="middle" fill="#e9edf8" font-size="18" font-weight="700">A 官方严格票</text>
+        <text x="235" y="400" text-anchor="middle">现行公示</text>
+      </g>
+      <g>
+        <rect x="470" y="144" width="110" height="206" rx="8" fill="#4da3ff"/><text x="525" y="134" fill="#e9edf8" font-size="22" font-weight="700" text-anchor="middle">95</text>
+        <rect x="590" y="50" width="110" height="300" rx="8" fill="#ff9a3d"/><text x="645" y="40" fill="#e9edf8" font-size="22" font-weight="700" text-anchor="middle">165</text>
+        <text x="585" y="378" text-anchor="middle" fill="#e9edf8" font-size="18" font-weight="700">B 全部快照持有人</text>
+        <text x="585" y="400" text-anchor="middle">无任何审核</text>
+      </g>
+      <g>
+        <rect x="820" y="144" width="110" height="206" rx="8" fill="#4da3ff"/><text x="875" y="134" fill="#e9edf8" font-size="22" font-weight="700" text-anchor="middle">95</text>
+        <rect x="940" y="154" width="110" height="196" rx="8" fill="#ff9a3d" opacity=".0"/>
+        <rect x="940" y="154" width="110" height="196" rx="8" fill="#ff9a3d"/><text x="995" y="144" fill="#e9edf8" font-size="22" font-weight="700" text-anchor="middle">108</text>
+        <text x="935" y="378" text-anchor="middle" fill="#e9edf8" font-size="18" font-weight="700">C 快照 − 033 转投账号 19 人</text>
+        <text x="935" y="400" text-anchor="middle">其余全部计入</text>
+      </g>
+      <g font-size="16">
+        <rect x="760" y="6" width="14" height="14" rx="3" fill="#4da3ff"/><text x="782" y="18" fill="#cdd4e8">003 @MostQin</text>
+        <rect x="920" y="6" width="14" height="14" rx="3" fill="#ff9a3d"/><text x="942" y="18" fill="#cdd4e8">056 @Miloxx23</text>
+      </g>
+    </g>
+  </svg>
+  <div class="foot"><span>三种口径只是边界；复核结果落在 A 与 C 之间（下一页起）</span><span>5 / 13</span></div>
+</section>
+
+<!-- 6 · 33转投账号 -->
+<section class="slide">
+  <div class="eyebrow">The 033 bloc</div>
+  <h2>19 个账号：第一轮投 033，之后全部转投 056</h2>
+  <div class="row" style="gap:16px;margin:2px 0 26px">
+    <div class="card" style="flex:1;text-align:center"><div class="big" style="font-size:52px">31</div><div class="label">033 第一轮投票人</div></div>
+    <div class="arrow">→</div>
+    <div class="card" style="flex:1;text-align:center"><div class="big" style="font-size:52px">23</div><div class="label">快照持有人但<br>不在名单</div></div>
+    <div class="arrow">→</div>
+    <div class="card" style="flex:1;text-align:center;border-color:var(--b)"><div class="big b" style="font-size:52px">19</div><div class="label">第 2、3 轮<br>全部转投 056</div></div>
+    <div class="arrow">→</div>
+    <div class="card" style="flex:1;text-align:center;border-color:var(--bad)"><div class="big bad" style="font-size:52px">0</div><div class="label">X 内容核查后<br>符合标准</div></div>
+  </div>
+  <div class="grid" style="grid-template-columns:1.2fr 1fr">
+    <div class="card"><h3>X 上看到的内容（只读核查）</h3><ul style="margin-top:8px"><li>16 人：回复 @cashmerelabs、@perlelabs、@sodex_official、@brevis_zk 等<b>其他项目</b>，且模板化（白名单、判图、邀请码）</li><li>2 人：账号已不存在 / 已冻结，无内容</li><li>1 人（@LewickiDamian）：时间线无法加载，基金会成员确认为抽奖类账号</li><li>无一人命中 TapeOut/BEM 关键词，也无与核心账号互动</li></ul></div>
+    <div class="card"><h3 class="warn">措辞说明</h3><p style="margin-top:8px;font-size:18px">仅凭投票模式，既可能是有组织，也可能是支持者的第二选择，<b>数据分不出来</b>。本报告的结论只建立在 X 内容证据上：他们的公开内容不满足基金会的标准。</p></div>
+  </div>
+  <div class="foot"><span>数据：56 进 3 / 3 进 2 / 2 进 1 投票明细；X 核查：2026-10-24 至 25</span><span>6 / 13</span></div>
+</section>
+
+<!-- 7 · 标准 -->
+<section class="slide">
+  <div class="eyebrow">Review criteria</div>
+  <h2>复核标准：基金会给定，四条合格、五类排除</h2>
+  <div class="grid" style="grid-template-columns:1fr 1fr">
+    <div class="card" style="border-color:var(--ok)"><h3 class="ok">合格（满足任一，且需实质性互动或原创）</h3>
+      <ul style="margin-top:8px;font-size:18px"><li><b>①</b> 与 @TapeOutWorld、@FirstoAI、@Blonskr、@TapeOutCF 真实回复、评论或带字引用</li><li><b>②</b> 原创含 TapeOut、TapeCode、Test1、BEM、NAND、LATCH、矿机、流片 等关键词</li><li><b>③</b> 与已知 Builder / Core Supporter 真实互动</li><li><b>④</b> 有明确捐赠或开发 TapeOut 工具 / 游戏的记录</li></ul></div>
+    <div class="card" style="border-color:var(--bad)"><h3 class="bad">排除</h3>
+      <ul style="margin-top:8px;font-size:18px"><li>仅点赞 / 纯转发 / 关注</li><li>仅单词提及（单独一个「BEM!」）</li><li>跨项目任务型、批量行为</li><li>讨论其他项目，与 TapeOut 无关</li><li>内容空泛内容</li></ul>
+      <p style="margin-top:12px;font-size:17px" class="muted">间接讨论可计入，但要判断是否真正参与了社区讨论。</p></div>
+  </div>
+  <div class="foot"><span>标准按基金会成员逐条确认的口径执行，复核过程中没有新增或放宽</span><span>7 / 13</span></div>
+</section>
+
+<!-- 8 · 方法 -->
+<section class="slide">
+  <div class="eyebrow">Method</div>
+  <h2>怎么核的：数据先行，再读 X</h2>
+  <div class="row" style="gap:14px;align-items:stretch">
+    <div class="card" style="flex:1"><div class="tag">01</div><h3 style="margin:10px 0 6px">读公示表</h3><p style="font-size:17px">三轮汇总 + 逐笔明细；核对汇总与明细一致</p></div>
+    <div class="card" style="flex:1"><div class="tag">02</div><h3 style="margin:10px 0 6px">找出未进入名单的账号</h3><p style="font-size:17px">快照持有人但不在名单：决赛 056 方 40、003 方 13</p></div>
+    <div class="card" style="flex:1"><div class="tag">03</div><h3 style="margin:10px 0 6px">结构分组</h3><p style="font-size:17px">按三轮投票轨迹分组，看谁后来才出现、谁转投</p></div>
+    <div class="card" style="flex:1"><div class="tag">04</div><h3 style="margin:10px 0 6px">只读核 X</h3><p style="font-size:17px">基金会成员已登录的 Chrome，扫主页与回复页，逐个附链接</p></div>
+    <div class="card" style="flex:1"><div class="tag">05</div><h3 style="margin:10px 0 6px">按标准判定</h3><p style="font-size:17px">计入 / 不计入 / 存疑，存疑不硬判</p></div>
+  </div>
+  <div class="card" style="margin-top:22px"><h3 class="warn">中途纠正了一个错误</h3><p style="margin-top:6px;font-size:18px">第一轮只扫了每个账号的<b>回复页</b>，漏掉原创帖，@EasonOnly 因此被误判为「弱」。重扫主页后发现他 46 条自发帖里 18 条含 TapeOut/BEM，并写明「我捐赠两张 NFT」，改判为明确计入。</p></div>
+  <div class="foot"><span>全程只读：未点赞、转发、关注、发帖或回复</span><span>8 / 13</span></div>
+</section>
+
+<!-- 标准与调整 -->
+<section class="slide">
+  <div class="eyebrow">Adjustments</div>
+  <h2 style="margin-bottom:18px">标准与方法在过程中怎么调整的</h2>
+  <div class="grid" style="grid-template-columns:1fr 1fr;gap:16px">
+    <div class="card"><h3 class="ok">标准对齐</h3><ul style="margin-top:8px;font-size:15px"><li>单词提及（单独「BEM!」）<b>不算</b></li><li>间接讨论<b>可以算</b>，但要判断是不是真正参与社区讨论，而不是没营养的内容</li><li>需要<b>实质性互动或原创</b></li></ul></div>
+    <div class="card" style="border-color:var(--bad)"><h3 class="bad">发现并纠正的错误</h3><ul style="margin-top:8px;font-size:15px"><li>第一轮只扫了每个账号的<b>回复页</b>，漏掉原创帖</li><li>@EasonOnly 因此被误判；重扫主页后：46 条自发帖里 18 条含 TapeOut/BEM，且写明「我捐赠两张 NFT」</li><li>此后对未通过的账号一律<b>主页 + 回复页</b>重扫</li></ul></div>
+    <div class="card" style="border-color:var(--ok)"><h3 class="ok">基金会成员逐个确认边缘账号</h3><ul style="margin-top:8px;font-size:15px"><li><b>计入</b>：@nctptd（社区成员）、@dngl829114、@fngqiojng11044、@KyymYu、@unrealhb、@madola0429</li><li><b>不计入</b>：4 个抽奖类账号、@tapecodenft / @tapeoutnft、@simplede22、@steawen5211</li></ul></div>
+    <div class="card"><h3 class="warn">转推与措辞</h3><ul style="margin-top:8px;font-size:15px"><li>成员指出 @EasonOnly 有转推 TapeOut 内容；脚本对所有账号转推数为 0，识别未校准，但他已计入，不影响结果</li><li>投票模式不能证明有组织，<b>不作「有组织行为」的判断</b>，结论只依据 X 内容证据</li></ul></div>
+  </div>
+  <div class="foot"><span>每一次调整都记录在 REPORT.md §4.3 与 README</span><span>9 / 13</span></div>
+</section>
+
+<!-- 9 · 结果 -->
+<section class="slide">
+  <div class="eyebrow">Findings</div>
+  <h2>53 个账号逐个核查的结果</h2>
+  <div class="grid" style="grid-template-columns:1fr 1fr">
+    <div class="card"><h3 class="b">056 方 · 40 人</h3>
+      <div class="row" style="gap:10px;margin:14px 0 6px"><div class="bar" style="width:27.5%;background:var(--ok)"></div><div class="bar" style="width:67.5%;background:#3a4568"></div><div class="bar" style="width:5%;background:var(--warn)"></div></div>
+      <table><tr><td><span class="ok">●</span> 合格</td><td class="n">11</td></tr><tr><td><span style="color:#6f7aa0">●</span> 不合格</td><td class="n">27</td></tr><tr><td><span class="warn">●</span> 存疑</td><td class="n">2</td></tr></table>
+      <p style="font-size:16px;margin-top:10px" class="muted">合格：yzm50、madola0429、Simon7394466717、fngqiojng11044、fernanseers8824、OGodbuilder、KyymYu、sheng_kang12540、Go_sprs、EasonOnly、nctptd</p></div>
+    <div class="card"><h3 class="a">003 方 · 13 人</h3>
+      <div class="row" style="gap:10px;margin:14px 0 6px"><div class="bar" style="width:38.5%;background:var(--ok)"></div><div class="bar" style="width:46%;background:#3a4568"></div><div class="bar" style="width:15%;background:var(--warn)"></div></div>
+      <table><tr><td><span class="ok">●</span> 合格</td><td class="n">5</td></tr><tr><td><span style="color:#6f7aa0">●</span> 不合格</td><td class="n">6</td></tr><tr><td><span class="warn">●</span> 存疑</td><td class="n">2</td></tr></table>
+      <p style="font-size:16px;margin-top:10px" class="muted">合格：0xWangXKK、cenhaozai、dngl829114、unrealhb、QIANNIANZONGZI0。存疑 2 个账号现已显示「不存在」</p></div>
+  </div>
+  <div class="foot"><span>全部结论与推文链接见 verification_worksheet.csv</span><span>10 / 13</span></div>
+</section>
+
+<!-- 10 · 重算 -->
+<section class="slide">
+  <div class="eyebrow">Recount</div>
+  <h2>重算决赛：每个合格账号 3 票</h2>
+  <div class="grid" style="grid-template-columns:1fr 1fr;gap:26px">
+    <div class="card"><table>
+      <tr><th></th><th style="text-align:right" class="a">003</th><th style="text-align:right" class="b">056</th></tr>
+      <tr><td>原历史严格票</td><td class="n">56</td><td class="n">45</td></tr>
+      <tr><td>复核新增</td><td class="n ok">+15</td><td class="n ok">+33</td></tr>
+      <tr><td style="font-weight:800">合计</td><td class="n a" style="font-size:30px">71</td><td class="n b" style="font-size:30px">78</td></tr></table></div>
+    <div class="card"><h3 class="warn">有多稳？</h3>
+      <ul style="margin-top:8px;font-size:18px"><li>056 领先 <b>7 票</b>，约 2.3 个账号</li><li>边缘账号已由基金会成员逐个确认：@fngqiojng11044、@KyymYu、@unrealhb、@nctptd、@dngl829114 计入</li><li>翻盘需要 056 方<b>再被剔除至少 3 个</b>账号，或 003 方多认可 3 个</li><li>@simplede22、@steawen5211（均投 003，共 6 票）若改计入，003 为 77，仍落后 1 票</li></ul></div>
+  </div>
+  <div class="foot"><span>2 进 1 决赛，截止 2026-10-24 00:00 UTC+8</span><span>11 / 13</span></div>
+</section>
+
+<!-- 11 · 边缘 + 局限 -->
+<section class="slide">
+  <div class="eyebrow">Open questions</div>
+  <h2>基金会成员的确认，与这次核查的局限</h2>
+  <div class="grid" style="grid-template-columns:1fr 1fr">
+    <div class="card"><h3 class="warn">基金会成员的确认</h3><ul style="margin-top:8px;font-size:17px"><li><b>计入</b>：@fngqiojng11044、@KyymYu、@unrealhb、@nctptd（社区成员）、@dngl829114、@madola0429</li><li><b>抽奖类账号，不计入</b>：@tapeagentai、@tapewallet、@LewickiDamian、@0xsenlin</li><li><b>不计入</b>：@simplede22、@steawen5211</li><li><b>不计入</b>：@tapecodenft、@tapeoutnft</li><li><b>转推</b>：成员指出 @EasonOnly 有转推 TapeOut 内容，他已计入，不影响结果</li></ul></div>
+    <div class="card"><h3 class="bad">局限</h3><ul style="margin-top:8px;font-size:17px"><li>4 个账号（不存在 / 已冻结）无内容可查，列存疑，未计票</li><li>转推识别未经校准：脚本对所有账号的转推数为 0，但已知 @EasonOnly 有转推（已因原创与捐赠计入，不影响结果）</li><li>脚本只扫近期约 6–14 屏，更早内容可能没逐条看</li><li>账号后来改名 / 注销的，当时是否合格无法回溯</li><li>公示表没有时间戳与钱包信息，无法分析提交时间或资金关联</li></ul></div>
+  </div>
+  <div class="foot"><span>所有不确定项都在 REPORT.md 第 8、10 节逐条列出</span><span>12 / 13</span></div>
+</section>
+
+<!-- 12 · 建议 -->
+<section class="slide">
+  <div class="eyebrow">Recommendation</div>
+  <h2>建议：不改规则，改流程</h2>
+  <div class="grid" style="grid-template-columns:repeat(4,1fr);gap:16px">
+    <div class="card"><div class="big a" style="font-size:44px">1</div><h3 style="margin:8px 0 6px">先定边缘</h3><p style="font-size:17px">把边缘账号的判法固定下来，再重算，避免看结果定标准</p></div>
+    <div class="card"><div class="big a" style="font-size:44px">2</div><h3 style="margin:8px 0 6px">补审后来者</h3><p style="font-size:17px">名单冻结后才出现的账号，按同一标准现查近期动态</p></div>
+    <div class="card"><div class="big a" style="font-size:44px">3</div><h3 style="margin:8px 0 6px">两边对称</h3><p style="font-size:17px">003、056 用同一标准、同一批核查人、同一张表</p></div>
+    <div class="card"><div class="big a" style="font-size:44px">4</div><h3 style="margin:8px 0 6px">公开证据</h3><p style="font-size:17px">每个结论附推文链接；结果与原公示不同，发更正公告</p></div>
+  </div>
+  <div class="card" style="margin-top:26px;border-color:var(--warn)"><p style="font-size:20px">最终裁决属于基金会。本报告提供的是<b>数据、证据与敏感性</b>：在基金会给定的标准下，<span class="b">056 78 : 003 71</span>，056 领先 7 票。</p></div>
+  <div class="foot"><span>完整分析、核查表与图表：REPORT.md · verification_worksheet.csv</span><span>13 / 13</span></div>
+</section>
+
+</div>
+<div class="nav" id="nav">← → 翻页 · F 全屏 · P 打印为 PDF</div>
+<script>
+const S=[...document.querySelectorAll('.slide')];let i=0;
+function fit(){const k=Math.min(innerWidth/1280,innerHeight/720);S.forEach(s=>s.style.transform=`translate(-50%,-50%) scale(${k})`)}
+function show(n){i=Math.max(0,Math.min(S.length-1,n));S.forEach((s,j)=>s.classList.toggle('on',j===i));try{history.replaceState(null,'','#'+(i+1))}catch(e){}}
+addEventListener('resize',fit);
+addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' ','Enter'].includes(e.key))show(i+1);if(['ArrowLeft','PageUp','Backspace'].includes(e.key))show(i-1);if(e.key==='Home')show(0);if(e.key==='End')show(S.length-1);if(e.key==='f')document.documentElement.requestFullscreen?.()});
+addEventListener('click',e=>{show(e.clientX>innerWidth/2?i+1:i-1)});
+fit();const h=parseInt(location.hash.slice(1));if(h)show(h-1);
+</script>
+</body>
+</html>

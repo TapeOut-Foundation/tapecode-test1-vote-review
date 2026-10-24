@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Test1 NFT 设计大赛 · 投票复核一页纸</title>
+<style>
+:root{--bg:#0a0e19;--line:#26314f;--text:#e9edf8;--muted:#8f9ab8;--a:#4da3ff;--b:#ff9a3d;--ok:#3ddc97;--bad:#ff5d6c;--warn:#ffd166}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1280px;height:720px;background:var(--bg);color:var(--text);font-family:"PingFang SC","Helvetica Neue","Noto Sans SC",system-ui,sans-serif}
+.page{width:1280px;height:720px;position:relative;overflow:hidden;padding:46px 64px;
+ background:radial-gradient(900px 500px at 88% -10%,rgba(77,163,255,.18),transparent 60%),radial-gradient(800px 500px at -10% 112%,rgba(255,154,61,.15),transparent 60%),var(--bg)}
+.page::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(180deg,#000,transparent 85%)}
+.page>*{position:relative}
+.eyebrow{font-size:13px;letter-spacing:.26em;color:var(--muted);font-weight:600}
+h1{font-size:40px;line-height:1.2;font-weight:800;margin:8px 0 22px;letter-spacing:-.01em}
+.a{color:var(--a)}.b{color:var(--b)}.ok{color:var(--ok)}.bad{color:var(--bad)}.warn{color:var(--warn)}.muted{color:var(--muted)}
+.row3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid var(--line);border-radius:14px;padding:16px 20px}
+.big{font-size:54px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.lab{font-size:14px;color:var(--muted);margin-top:8px;line-height:1.45}
+.two{display:grid;grid-template-columns:1.15fr 1fr;gap:16px;margin-top:16px}
+ul{padding-left:20px}li{font-size:16px;line-height:1.5;margin:4px 0;color:#cdd4e8}
+li b{color:var(--text)}
+h3{font-size:16px;font-weight:700;margin-bottom:6px}
+.sig{position:absolute;right:64px;bottom:34px;text-align:right}
+.sig .h{font-size:30px;font-weight:800;letter-spacing:.01em;background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sig .s{font-size:12px;color:var(--muted);margin-top:2px;letter-spacing:.1em}
+.note{position:absolute;left:64px;bottom:36px;font-size:12px;color:#5d6888;max-width:780px;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="eyebrow">TEST1 NFT DESIGN CONTEST · VOTE REVIEW · ONE-PAGE SUMMARY</div>
+  <h1>按基金会标准复核：<span class="a">003 71</span> <span class="muted">:</span> <span class="b">056 78</span>，<br>056 领先 7 票，边缘账号已由基金会逐个确认</h1>
+
+  <div class="row3">
+    <div class="card"><div class="big"><span class="a">56</span><span class="muted"> : </span><span class="b">45</span></div><div class="lab">官方公示（历史严格票）<br>名单首轮冻结，003 冠军</div></div>
+    <div class="card"><div class="big ok">53</div><div class="lab">未进入名单的快照持有人账号<br>全部逐个核查 X 内容（只读）</div></div>
+    <div class="card"><div class="big"><span class="a">71</span><span class="muted"> : </span><span class="b">78</span></div><div class="lab">复核后，每个合格账号 3 票<br>056 领先 7 票</div></div>
+  </div>
+
+  <div class="two">
+    <div class="card">
+      <h3 class="warn">发现</h3>
+      <ul>
+        <li>固定名单只来自第一轮：<b>后来才出现的 16 个账号（056 方 14、003 方 2）</b>被流程性排除，与内容无关</li>
+        <li>033 转投账号 <b>19 人逐个核查，0 人合格</b>：内容为其他项目的任务型回复</li>
+        <li>合格：<b>056 方 11 人</b>（如 @EasonOnly 捐赠 NFT 并多次发 TapeOut 原创）、<b>003 方 5 人</b></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="warn">确认情况与建议</h3>
+      <ul>
+        <li>边缘账号（@nctptd、@dngl829114、@unrealhb 等）<b>已由基金会成员确认计入</b>；4 个抽奖类账号不计入</li>
+        <li>翻盘需 056 方再被剔除至少 3 个账号；@tapecodenft、@tapeoutnft 不计入</li>
+        <li>建议：先固定边缘判法 → 补审后来者 → 两边同标准 → 公开证据</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="note">标准：与 @TapeOutWorld / @FirstoAI / @Blonskr / @TapeOutCF 真实互动；原创含 TapeOut·BEM·矿机·流片等关键词；与 Builder/Core Supporter 互动；有捐赠或开发记录。排除点赞/纯转发、单词提及、跨项目任务型、内容空泛内容。4 个账号不存在 / 已冻结，列存疑，未计票。</div>
+  <div class="sig"><div class="h">@TapeOutCF</div><div class="s">TAPEOUT COMMUNITY FOUNDATION</div></div>
+</div>
+</body>
+</html>

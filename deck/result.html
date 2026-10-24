@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Test1 NFT 设计大赛 · 决赛复核结果</title>
+<style>
+:root{--bg:#0a0e19;--line:#26314f;--text:#e9edf8;--muted:#8f9ab8;--dim:#5d6888;--a:#4da3ff;--b:#ff9a3d;--ok:#3ddc97;--bad:#ff5d6c;--warn:#ffd166}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1280px;height:720px;background:var(--bg);color:var(--text);font-family:"PingFang SC","Helvetica Neue","Noto Sans SC",system-ui,sans-serif}
+.page{width:1280px;height:720px;position:relative;overflow:hidden;padding:46px 64px;
+ background:radial-gradient(900px 500px at 88% -10%,rgba(77,163,255,.18),transparent 60%),radial-gradient(800px 500px at -10% 112%,rgba(255,154,61,.16),transparent 60%),var(--bg)}
+.page::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(180deg,#000,transparent 85%)}
+.page>*{position:relative}
+.eyebrow{font-size:13px;letter-spacing:.26em;color:var(--muted);font-weight:600}
+h1{font-size:38px;font-weight:800;margin:8px 0 6px;letter-spacing:-.01em}
+.sub{font-size:17px;color:var(--muted)}
+.a{color:var(--a)}.b{color:var(--b)}.ok{color:var(--ok)}.warn{color:var(--warn)}.muted{color:var(--muted)}
+.bars{margin-top:30px}
+.line{display:flex;align-items:center;gap:20px;margin:18px 0}
+.who{width:170px}
+.who .n{font-size:30px;font-weight:800}
+.who .h{font-size:14px;color:var(--muted);margin-top:2px}
+.track{display:flex;height:56px;width:900px;gap:3px}
+.seg{height:56px;border-radius:10px;display:flex;align-items:center;padding-left:14px;font-size:16px;font-weight:700;color:#0a0e19;white-space:nowrap}
+.tot{font-size:64px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.02em;width:110px}
+.legend{display:flex;gap:26px;margin:4px 0 0 190px;font-size:14px;color:var(--muted)}
+.legend i{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:8px;vertical-align:-2px}
+.lead{position:absolute;right:64px;top:112px;text-align:right}
+.lead .big{font-size:52px;font-weight:800;color:var(--b);line-height:1}
+.lead .s{font-size:15px;color:var(--muted);margin-top:6px}
+.chips{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
+.chip{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid var(--line);border-radius:14px;padding:14px 18px}
+.chip .v{font-size:34px;font-weight:800;font-variant-numeric:tabular-nums}
+.chip .l{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.45}
+.note{position:absolute;left:64px;bottom:36px;font-size:12px;color:var(--dim);max-width:800px;line-height:1.55}
+.sig{position:absolute;right:64px;bottom:34px;text-align:right}
+.sig .h{font-size:30px;font-weight:800;background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sig .s{font-size:12px;color:var(--muted);margin-top:2px;letter-spacing:.1em}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="eyebrow">TEST1 NFT DESIGN CONTEST · FINAL · REVIEWED RESULT</div>
+  <h1>决赛复核结果：<span class="b">056</span> 以 78 : 71 领先</h1>
+  <div class="sub">2 进 1 · 截止 2026-10-24 00:00 UTC+8 · 每个合格账号 3 票</div>
+  <div class="lead"><div class="big">+7</div><div class="s">056 领先票数</div></div>
+
+  <div class="bars">
+    <div class="line">
+      <div class="who"><div class="n a">003</div><div class="h">@MostQin</div></div>
+      <div class="track">
+        <div class="seg" style="width:646px;background:var(--a)">官方严格票 56</div>
+        <div class="seg" style="width:173px;background:#9cc9ff">复核新增 +15</div>
+      </div>
+      <div class="tot a">71</div>
+    </div>
+    <div class="line">
+      <div class="who"><div class="n b">056</div><div class="h">@Miloxx23</div></div>
+      <div class="track">
+        <div class="seg" style="width:519px;background:var(--b)">官方严格票 45</div>
+        <div class="seg" style="width:381px;background:#ffcf9a">复核新增 +33</div>
+      </div>
+      <div class="tot b">78</div>
+    </div>
+    <div class="legend"><span><i style="background:#6b7699"></i>深色：官方历史严格票</span><span><i style="background:#c9d2ec"></i>浅色：复核后新增的合格账号（11 + 5 个，各 3 票）</span></div>
+  </div>
+
+  <div class="chips">
+    <div class="chip"><div class="v"><span class="a">56</span> : <span class="b">45</span></div><div class="l">官方公示（历史严格票）<br>名单首轮冻结</div></div>
+    <div class="chip"><div class="v">53</div><div class="l">未进入名单的快照持有人账号<br>全部逐个核查 X 内容</div></div>
+    <div class="chip"><div class="v ok">16</div><div class="l">复核后合格<br><span class="b">056 方 11</span> · <span class="a">003 方 5</span></div></div>
+    <div class="chip"><div class="v warn">≥3</div><div class="l">翻盘所需：056 方再被剔除的账号数<br>（78 − 9 = 69 &lt; 71）</div></div>
+  </div>
+
+  <div class="note">标准由基金会给定：与官方 / 核心账号真实互动；原创含 TapeOut·BEM·矿机·流片等关键词；与 Builder 互动；有捐赠或开发记录；排除点赞 / 纯转发、单词提及、跨项目任务型、内容空泛内容。边缘账号经基金会成员逐个确认。另有 4 个账号（不存在 / 已冻结）存疑，未计票。</div>
+  <div class="sig"><div class="h">@TapeOutCF</div><div class="s">TAPEOUT COMMUNITY FOUNDATION</div></div>
+</div>
+</body>
+</html>
