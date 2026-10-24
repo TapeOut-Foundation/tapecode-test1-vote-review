@@ -15,6 +15,8 @@
 ![结果](deck/result.png)
 
 > 最终裁决属于基金会。本仓库提供数据、证据和敏感性分析。
+>
+> 整理：[@BruceLanLan](https://github.com/BruceLanLan) · [TapeOut Community Foundation](https://x.com/TapeOutCF)
 
 ## 看什么
 
@@ -130,5 +132,5 @@ python build_report_pdf.py             # REPORT.md → REPORT.pdf（需本机 Ch
 X 内容核查需要已登录 X 的浏览器，没有脚本化；核查结果记录在 `data/conclusions/verification_worksheet.csv`。
 
 ## 注意
-- 本仓库为**私有**仓库，内含对真实 X 账号的判断，公开前请先审核措辞。
+- 本仓库公开，内含对真实 X 账号按标准做的判定与证据链接；如对某个账号的判定有异议，请提 issue。
 - 本分析不替基金会做裁决。
