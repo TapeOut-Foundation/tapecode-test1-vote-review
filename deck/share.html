@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Test1 NFT 设计大赛 · 投票复核 · 分享图</title>
+<style>
+:root{--bg:#0a0e19;--card:#111830;--line:#263153;--text:#eef1fa;--soft:#c3cbe3;--muted:#8d98b8;--a:#5aa9ff;--a2:#a9d0ff;--b:#ff9f45;--b2:#ffd2a1;--ok:#3ddc97;--warn:#ffd166}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1600px;height:930px;background:var(--bg);color:var(--text);font-family:"PingFang SC","Helvetica Neue","Noto Sans SC",system-ui,sans-serif}
+.p{width:1600px;height:930px;position:relative;overflow:hidden;padding:52px 64px;
+ background:radial-gradient(1000px 560px at 92% -10%,rgba(90,169,255,.2),transparent 60%),radial-gradient(900px 560px at -8% 110%,rgba(255,159,69,.16),transparent 60%),var(--bg)}
+.p::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.024) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.024) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(180deg,#000,transparent 85%)}
+.p>*{position:relative}
+.top{display:flex;justify-content:space-between;align-items:flex-start}
+.eyebrow{font-size:14px;letter-spacing:.3em;color:var(--muted);font-weight:700}
+h1{font-size:50px;line-height:1.12;font-weight:800;margin-top:10px;letter-spacing:-.01em}
+.sub{font-size:20px;color:var(--soft);margin-top:10px}
+.badge{border:1px solid rgba(61,220,151,.5);color:var(--ok);padding:7px 16px;border-radius:99px;font-size:16px;font-weight:700;background:rgba(61,220,151,.08)}
+.a{color:var(--a)}.b{color:var(--b)}.ok{color:var(--ok)}.warn{color:var(--warn)}.muted{color:var(--muted)}
+.main{display:grid;grid-template-columns:800px 1fr;gap:40px;margin-top:30px}
+.lab{font-size:13px;letter-spacing:.22em;font-weight:800;color:var(--muted);margin-bottom:12px}
+.row{display:flex;align-items:center;gap:18px;margin:12px 0}
+.who{width:88px}.who b{font-size:28px;font-weight:800;display:block}.who span{font-size:13px;color:var(--muted)}
+.track{display:flex;gap:4px;width:540px}
+.seg{height:50px;border-radius:11px;display:flex;align-items:center;padding-left:14px;font-size:15.5px;font-weight:700;color:#0a0e19;white-space:nowrap}
+.tot{font-size:72px;font-weight:800;line-height:1;letter-spacing:-.03em;width:110px;font-variant-numeric:tabular-nums}
+.lead{display:flex;gap:14px;margin-top:18px}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 18px;flex:1}
+.chip .v{font-size:32px;font-weight:800;line-height:1.1;font-variant-numeric:tabular-nums}
+.chip .l{font-size:14px;color:var(--soft);margin-top:5px;line-height:1.4}
+.scn{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 24px}
+.scn svg{display:block}
+.bottom{display:grid;grid-template-columns:1.05fr 1.3fr .95fr;gap:18px;margin-top:24px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 22px}
+.card h3{font-size:13px;letter-spacing:.2em;color:var(--muted);font-weight:800;margin-bottom:10px}
+.std li{list-style:none;display:flex;gap:10px;font-size:15px;line-height:1.45;color:var(--soft);margin:6px 0}
+.std li i{flex:none;width:24px;height:24px;border-radius:7px;background:rgba(61,220,151,.15);color:var(--ok);font-style:normal;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:13px}
+.steps{display:flex;gap:10px;align-items:stretch}
+.st{flex:1;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:12px;padding:10px 10px 10px 12px}
+.st b{display:block;font-size:12px;color:var(--a);font-weight:800}
+.st span{font-size:14px;color:var(--soft);line-height:1.35;display:block;margin-top:3px}
+.st em{font-style:normal;font-size:15px;font-weight:800;display:block;margin-top:6px;color:var(--text)}
+.cta{font-size:15px;line-height:1.55;color:var(--soft)}
+.cta b{color:var(--text)}
+.url{margin-top:10px;font-size:15px;font-weight:700;color:var(--a);word-break:break-all}
+.foot{position:absolute;left:64px;right:64px;bottom:26px;display:flex;justify-content:space-between;align-items:flex-end}
+.note{font-size:13px;color:#5d6888;max-width:1000px;line-height:1.55}
+.sig{text-align:right}
+.sig .h{font-size:34px;font-weight:800;background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sig .s{font-size:12px;color:var(--muted);letter-spacing:.14em;margin-top:1px}
+</style>
+</head>
+<body>
+<div class="p">
+  <div class="top">
+    <div>
+      <div class="eyebrow">TEST1 NFT DESIGN CONTEST · VOTE REVIEW · FINAL</div>
+      <h1>投票复核结果：<span class="a">003 78</span> <span class="muted">:</span> <span class="b">056 84</span></h1>
+      <div class="sub">此前的审核条件偏严，是我们的疏忽 · 我们用同一标准重新审核了所有账号</div>
+    </div>
+    <div class="badge">数据 · 方法 · 证据 全部开源</div>
+  </div>
+
+  <div class="main">
+    <div>
+      <div class="lab">决赛 · 快照账号 3 票 · 1 票地址 1 票</div>
+      <div class="row"><div class="who"><b class="a">003</b><span>@MostQin</span></div>
+        <div class="track"><div class="seg" style="width:378px;background:var(--a)">官方严格票 56</div><div class="seg" style="width:148px;background:var(--a2)">复核 +22</div></div>
+        <div class="tot a">78</div></div>
+      <div class="row"><div class="who"><b class="b">056</b><span>@Miloxx23</span></div>
+        <div class="track"><div class="seg" style="width:304px;background:var(--b)">官方严格票 45</div><div class="seg" style="width:226px;background:var(--b2)">复核 +39</div></div>
+        <div class="tot b">84</div></div>
+      <div class="lead">
+        <div class="chip"><div class="v b">+6</div><div class="l">056 领先<br>≈ 2 个快照账号</div></div>
+        <div class="chip"><div class="v">135</div><div class="l">同一标准审核<br>53 快照账号 + 82 个 1 票地址</div></div>
+        <div class="chip"><div class="v ok">25</div><div class="l">复核后合格<br><span class="b">056 · 17</span>　<span class="a">003 · 8</span></div></div>
+      </div>
+    </div>
+    <div class="scn">
+      <div class="lab" style="margin-bottom:6px">所有口径 · 除首轮冻结名单外，056 均领先</div>
+      <svg viewBox="0 0 640 296" width="100%" style="font-family:PingFang SC,sans-serif">
+        <g font-size="14" fill="#c3cbe3">
+        <text x="0" y="22">A 首轮冻结名单</text><rect x="150" y="8" width="157" height="9" rx="3" fill="#5aa9ff"/><rect x="150" y="19" width="126" height="9" rx="3" fill="#ff9f45"/><text x="600" y="22" text-anchor="end" fill="#5aa9ff" font-weight="800">003 +11</text>
+        <text x="0" y="62">B 复核快照账号</text><rect x="150" y="48" width="199" height="9" rx="3" fill="#5aa9ff"/><rect x="150" y="59" width="218" height="9" rx="3" fill="#ff9f45"/><text x="600" y="62" text-anchor="end" fill="#ff9f45" font-weight="800">056 +7</text>
+        <text x="0" y="102">C B + 边缘 2 个</text><rect x="150" y="88" width="216" height="9" rx="3" fill="#5aa9ff"/><rect x="150" y="99" width="218" height="9" rx="3" fill="#ff9f45"/><text x="600" y="102" text-anchor="end" fill="#ff9f45" font-weight="800">056 +1</text>
+        <text x="0" y="142" font-weight="800" fill="#eef1fa">D 最终口径</text><rect x="150" y="128" width="218" height="9" rx="3" fill="#5aa9ff"/><rect x="150" y="139" width="235" height="9" rx="3" fill="#ff9f45"/><text x="600" y="142" text-anchor="end" fill="#ff9f45" font-weight="800">056 +6</text>
+        <text x="0" y="182">E 全部快照持有人</text><rect x="150" y="168" width="266" height="9" rx="3" fill="#5aa9ff"/><rect x="150" y="179" width="320" height="9" rx="3" fill="#ff9f45"/><text x="600" y="182" text-anchor="end" fill="#ff9f45" font-weight="800">056 +70</text>
+        <text x="0" y="222">F 快照 − 033 转投</text><rect x="150" y="208" width="266" height="9" rx="3" fill="#5aa9ff"/><rect x="150" y="219" width="302" height="9" rx="3" fill="#ff9f45"/><text x="600" y="222" text-anchor="end" fill="#ff9f45" font-weight="800">056 +13</text>
+        <text x="0" y="262">G 全部原始票</text><rect x="150" y="248" width="277" height="9" rx="3" fill="#5aa9ff"/><rect x="150" y="259" width="320" height="9" rx="3" fill="#ff9f45"/><text x="600" y="262" text-anchor="end" fill="#ff9f45" font-weight="800">056 +144</text>
+        </g>
+        
+        <rect x="420" y="282" width="10" height="10" rx="2" fill="#5aa9ff"/><text x="436" y="291" font-size="12" fill="#8d98b8">003</text><rect x="470" y="282" width="10" height="10" rx="2" fill="#ff9f45"/><text x="486" y="291" font-size="12" fill="#8d98b8">056</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="card std"><h3>审核标准</h3>
+      <ul>
+        <li><i>1</i><span>与 @Blonskr、@TapeOutCF 等真实回复、评论</span></li>
+        <li><i>2</i><span>原创含 TapeOut、TapeCode、Test1、BEM 等内容</span></li>
+        <li><i>3</i><span>与 Builder / Core Supporter 真实互动</span></li>
+        <li><i>4</i><span>有捐赠或开发 TapeOut 工具 / 游戏的记录</span></li>
+      </ul>
+      <div style="font-size:13.5px;color:var(--muted);margin-top:6px">无效：点赞 / 纯转发 / 单词与空泛回复 / 无关项目 / 提交时间高度集中的批量投票</div>
+    </div>
+    <div class="card"><h3>我们怎么做的</h3>
+      <div class="steps">
+        <div class="st"><b>01</b><span>读公示表，核对三轮数据</span><em>7 张表</em></div>
+        <div class="st"><b>02</b><span>找出全部待审账号</span><em>135 个</em></div>
+        <div class="st"><b>03</b><span>只读核查 X 主页与回复</span><em>附证据链接</em></div>
+        <div class="st"><b>04</b><span>成员确认边缘账号</span><em>逐个</em></div>
+        <div class="st"><b>05</b><span>重算并公开所有口径</span><em class="b">84 : 78</em></div>
+      </div>
+    </div>
+    <div class="card"><h3>觉得被误判？</h3>
+      <div class="cta">在 GitHub 提 <b>issue</b>，附上 X 账号和推文链接，我们<b>逐个复核</b>并公开回复。</div>
+      <div class="url">github.com/TapeOut-Foundation/<br>tapecode-test1-vote-review</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="note">全程只读，未点赞、转发、关注、发帖或回复。1 票地址中提交时间高度集中的批量投票按基金会数据库口径不计，不公开名单。<br>两件作品都非常出色，谢谢每一位创作者和投票的朋友。</div>
+    <div class="sig"><div class="h">@TapeOutCF</div><div class="s">TAPEOUT COMMUNITY FOUNDATION</div></div>
+  </div>
+</div>
+</body>
+</html>

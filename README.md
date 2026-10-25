@@ -38,6 +38,7 @@
 | [`deck/result.png`](deck/result.png) | 一页结果图 |
 | [`deck/method.png`](deck/method.png) | 一页方法汇总：方法、过程、标准的调整、数据结果 |
 | [`deck/summary.png`](deck/summary.png) | 一页总结（署名 @TapeOutCF） |
+| [`deck/share.png`](deck/share.png) | 最终 X 分享图 |
 | [`deck/deck.pdf`](deck/deck.pdf) | 汇报 deck（PDF），网页版 [`deck/deck.html`](deck/deck.html) |
 | [`REPORT.pdf`](REPORT.pdf) / [`REPORT.md`](REPORT.md) | 详细报告 |
 | [`data/raw/`](data/raw/) | **原始数据**：官方公示表 xlsx + 每个工作表的 CSV |
