@@ -6,8 +6,8 @@
 <style>
 :root{--bg:#0a0e19;--card:#111830;--line:#263153;--text:#eef1fa;--soft:#c3cbe3;--muted:#8d98b8;--a:#5aa9ff;--a2:#a9d0ff;--b:#ff9f45;--b2:#ffd2a1;--ok:#3ddc97;--bad:#ff6b79;--warn:#ffd166}
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{width:1600px;height:1540px;background:var(--bg);color:var(--text);font-family:"PingFang SC","Helvetica Neue","Noto Sans SC",system-ui,sans-serif}
-.page{width:1600px;height:1540px;position:relative;overflow:hidden;padding:64px 80px;
+html,body{width:1600px;height:1620px;background:var(--bg);color:var(--text);font-family:"PingFang SC","Helvetica Neue","Noto Sans SC",system-ui,sans-serif}
+.page{width:1600px;height:1620px;position:relative;overflow:hidden;padding:64px 80px;
  background:radial-gradient(1100px 620px at 92% -8%,rgba(90,169,255,.17),transparent 60%),radial-gradient(1000px 600px at -8% 108%,rgba(255,159,69,.13),transparent 60%),var(--bg)}
 .page::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(180deg,#000,transparent 80%)}
 .page>*{position:relative}
@@ -67,52 +67,52 @@ h1{font-size:54px;line-height:1.15;font-weight:800;margin:12px 0 0;letter-spacin
 
   <div class="hero">
     <div>
-      <div class="label">决赛结果 · 每个合格账号 3 票</div>
+      <div class="label">决赛结果 · 快照账号 3 票 · 1 票地址 1 票</div>
       <div class="row"><div class="who"><b class="a">003</b><span>@MostQin</span></div>
-        <div class="track"><div class="seg" style="width:448px;background:var(--a)">官方严格票 56</div><div class="seg" style="width:120px;background:var(--a2)">+15</div></div>
-        <div class="tot a">71</div></div>
+        <div class="track"><div class="seg" style="width:448px;background:var(--a)">官方严格票 56</div><div class="seg" style="width:176px;background:var(--a2)">+22</div></div>
+        <div class="tot a">78</div></div>
       <div class="row"><div class="who"><b class="b">056</b><span>@Miloxx23</span></div>
-        <div class="track"><div class="seg" style="width:360px;background:var(--b)">官方严格票 45</div><div class="seg" style="width:264px;background:var(--b2)">复核新增 +33</div></div>
-        <div class="tot b">78</div></div>
+        <div class="track"><div class="seg" style="width:360px;background:var(--b)">官方严格票 45</div><div class="seg" style="width:312px;background:var(--b2)">复核新增 +39</div></div>
+        <div class="tot b">84</div></div>
     </div>
     <div class="kpis">
-      <div class="kpi"><div class="v">53</div><div class="l">未进入名单的账号<br>逐个核查 X 内容</div></div>
-      <div class="kpi"><div class="v ok">16</div><div class="l">复核后合格<br><span class="b">056 · 11</span>　<span class="a">003 · 5</span></div></div>
-      <div class="kpi"><div class="v b">+7</div><div class="l">056 领先票数</div></div>
-      <div class="kpi"><div class="v warn">≥ 3</div><div class="l">翻盘所需：056 方再被剔除的账号数</div></div>
+      <div class="kpi"><div class="v">135</div><div class="l">同一标准全部审核<br>53 快照账号 + 82 个 1 票地址</div></div>
+      <div class="kpi"><div class="v ok">25</div><div class="l">复核后合格<br><span class="b">056 · 17</span>　<span class="a">003 · 8</span></div></div>
+      <div class="kpi"><div class="v b">+6</div><div class="l">056 领先票数</div></div>
+      <div class="kpi"><div class="v warn">≈ 2</div><div class="l">领先约等于 2 个快照账号<br>所有口径结果已公开</div></div>
     </div>
   </div>
 
   <div class="rail">
     <div class="step"><div class="dot a">1</div><h4>读公示表</h4><p>三轮汇总与逐笔明细交叉核对，拆出原始 / 快照 / 历史严格三套口径</p><div class="k a">3 轮 · 7 张表</div></div>
-    <div class="step"><div class="dot a">2</div><h4>找未进入名单的账号</h4><p>决赛里是快照持有人、但不在 67 人固定名单里的账号</p><div class="k"><span class="b">056 · 40</span>　<span class="a">003 · 13</span></div></div>
+    <div class="step"><div class="dot a">2</div><h4>找未进入名单的账号</h4><p>快照持有人但不在 67 人名单里的账号，加上全部 1 票地址</p><div class="k"><span class="b">056 · 118</span>　<span class="a">003 · 17</span></div></div>
     <div class="step"><div class="dot">3</div><h4>结构分组</h4><p>按三轮投票轨迹分组：谁后来才出现、谁整体转投。只看数据，不看内容</p><div class="k">7 个分组</div></div>
-    <div class="step"><div class="dot">4</div><h4>读 X 核查</h4><p>在已登录的 Chrome 里只读扫描主页和回复页，按标准判定，附推文链接</p><div class="k">53 个账号</div></div>
-    <div class="step"><div class="dot b">5</div><h4>确认与重算</h4><p>边缘账号由基金会成员逐个确认，再重算决赛并做敏感性分析</p><div class="k"><span class="a">71</span> : <span class="b">78</span></div></div>
+    <div class="step"><div class="dot">4</div><h4>读 X 核查</h4><p>在已登录的 Chrome 里只读扫描主页和回复页，按标准判定，附推文链接</p><div class="k">135 个账号</div></div>
+    <div class="step"><div class="dot b">5</div><h4>确认与重算</h4><p>边缘账号由基金会成员逐个确认，再重算决赛并做敏感性分析</p><div class="k"><span class="a">78</span> : <span class="b">84</span></div></div>
   </div>
 
   <div class="cols">
     <div class="card">
       <div class="label">数据漏斗 · 决赛</div>
       <div class="f"><div class="n">170</div><div class="bar" style="width:260px;background:#6b7699"></div></div><div class="ft">全部投票账号</div>
-      <div class="f"><div class="n a">88</div><div class="bar" style="width:134px;background:var(--a)"></div></div><div class="ft">快照持有人</div>
-      <div class="f"><div class="n ok">35</div><div class="bar" style="width:53px;background:var(--ok)"></div></div><div class="ft">在固定名单内</div>
-      <div class="f"><div class="n warn">53</div><div class="bar" style="width:81px;background:var(--warn)"></div></div><div class="ft">未进入名单，逐个核查</div>
-      <div class="f"><div class="n ok">16</div><div class="bar" style="width:25px;background:var(--ok)"></div></div><div class="ft">复核后合格（不计入 33 · 存疑 4）</div>
-      <p style="font-size:15px;color:var(--muted);line-height:1.6;margin-top:18px">关键发现：固定名单的 67 人恰好等于第一轮的严格有效投票人，后来才出现的账号没有被审核的机会（056 方 14、003 方 2）。033 转投账号 19 人核查后 0 人合格。</p>
+      <div class="f"><div class="n a">88</div><div class="bar" style="width:134px;background:var(--a)"></div></div><div class="ft">快照持有人（3 票）：35 在名单内 · 53 未进名单</div>
+      <div class="f"><div class="n warn">82</div><div class="bar" style="width:125px;background:var(--warn)"></div></div><div class="ft">1 票地址（此前不参与复核）</div>
+      <div class="f"><div class="n ok">135</div><div class="bar" style="width:208px;background:var(--ok)"></div></div><div class="ft">同一标准审核：53 + 82</div>
+      <div class="f"><div class="n ok">25</div><div class="bar" style="width:38px;background:var(--ok)"></div></div><div class="ft">复核后合格：快照 18 · 1 票地址 7</div>
+      <p style="font-size:15px;color:var(--muted);line-height:1.6;margin-top:18px">名单只来自第一轮投票人，后来才出现的账号没有被审核的机会（056 方 14、003 方 2）。1 票地址中 67 个因提交时间高度集中未通过（数据库口径，不公开名单）。</p>
     </div>
 
     <div class="card std">
       <div class="label">最终标准 · 基金会给定</div>
       <ul>
-        <li><i>1</i><span>与 <b>@TapeOutWorld / @FirstoAI / @Blonskr / @TapeOutCF</b> 真实回复、评论或带字引用</span></li>
+        <li><i>1</i><span>与 <b>@Blonskr / @TapeOutCF</b> 等生态账号真实回复、评论或带字引用</span></li>
         <li><i>2</i><span>原创含 <b>TapeOut、TapeCode、Test1、BEM、NAND、LATCH、矿机、流片</b> 等关键词</span></li>
         <li><i>3</i><span>与已知 <b>Builder / Core Supporter</b> 真实互动</span></li>
         <li><i>4</i><span>有明确<b>捐赠或开发</b> TapeOut 工具 / 游戏的记录</span></li>
       </ul>
       <p style="font-size:15px;color:var(--muted);margin-top:6px">满足任一条，且需实质性互动或原创；间接讨论可计入，但要真正参与社区讨论。</p>
       <div class="label" style="margin-top:22px">排除</div>
-      <div class="chips"><span class="chip">仅点赞 / 纯转发 / 关注</span><span class="chip">仅单词提及（单独“BEM!”）</span><span class="chip">跨项目任务型 / 批量行为</span><span class="chip">讨论其他项目</span><span class="chip">内容空泛内容</span></div>
+      <div class="chips"><span class="chip">仅点赞 / 纯转发 / 关注</span><span class="chip">仅单词提及 / 空泛回复</span><span class="chip">与 TapeOut 无关的其他项目</span><span class="chip">提交时间高度集中的批量投票（数据库口径）</span></div>
     </div>
 
     <div class="card">
@@ -121,13 +121,14 @@ h1{font-size:54px;line-height:1.15;font-weight:800;margin:12px 0 0;letter-spacin
         <div class="it"><b>标准对齐</b><span>单词提及不算；间接讨论要看是否真参与社区；需实质性互动或原创</span></div>
         <div class="it bad"><b>发现并纠正一个错误</b><span>第一轮只扫了回复页，漏掉原创帖，@EasonOnly 被误判；改为主页 + 回复页重扫，他 46 条里 18 条含 TapeOut/BEM，并捐赠 2 张 NFT，改判计入</span></div>
         <div class="it ok"><b>基金会成员逐个确认边缘账号</b><span>@nctptd（社区成员）、@dngl829114 等计入；抽奖类账号、相关账号不计入</span></div>
+        <div class="it ok"><b>扩展到全部账号</b><span>审核范围从快照账号扩展到全部 82 个 1 票地址；加入“提交时间高度集中”一条（数据库口径）</span></div>
         <div class="it"><b>转推与措辞</b><span>转推识别未校准（已知 @EasonOnly 有转推，已计入）；不对任何账号作“有组织行为”的判断，结论只依据 X 内容证据</span></div>
       </div>
     </div>
   </div>
 
   <div class="foot">
-    <div class="note">全程只读，未点赞、转发、关注、发帖或回复。原始数据与逐个结论见 data/raw 与 data/conclusions。<br>局限：脚本只扫近期内容；公示表无时间戳与钱包信息；4 个账号（不存在 / 已冻结）存疑未计票。</div>
+    <div class="note">全程只读，未点赞、转发、关注、发帖或回复。原始数据与逐个结论见 data/raw 与 data/conclusions。<br>局限：脚本只扫近期内容；公示表无时间戳与钱包信息；4 个账号（不存在 / 已冻结）存疑未计票；公开所有口径下的结果与边缘账号的敏感性。</div>
     <div class="sig"><div class="h">@TapeOutCF</div><div class="s">TAPEOUT COMMUNITY FOUNDATION</div></div>
   </div>
 </div>

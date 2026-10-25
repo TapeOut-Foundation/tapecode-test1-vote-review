@@ -2,21 +2,21 @@
   "final": {
     "003": {
       "official_strict": 56,
-      "added": 15,
-      "total": 71,
-      "accounts_counted": 5
+      "snapshot_reviewed": 21,
+      "one_vote_reviewed": 1,
+      "total": 78
     },
     "056": {
       "official_strict": 45,
-      "added": 33,
-      "total": 78,
-      "accounts_counted": 11
+      "snapshot_reviewed": 33,
+      "one_vote_reviewed": 6,
+      "total": 84
     }
   },
   "cut_accounts": {
     "003": {
-      "不计入": 6,
-      "计入": 5,
+      "不计入": 4,
+      "计入": 7,
       "存疑": 2
     },
     "056": {
@@ -26,25 +26,55 @@
     }
   },
   "scenarios": {
-    "A_official_strict": {
+    "A": {
       "003": 56,
       "056": 45
     },
-    "B_all_snapshot": {
+    "B": {
+      "003": 71,
+      "056": 78
+    },
+    "C": {
+      "003": 77,
+      "056": 78
+    },
+    "D": {
+      "003": 78,
+      "056": 84
+    },
+    "D+": {
+      "003": 79,
+      "056": 84
+    },
+    "E": {
       "003": 95,
       "056": 165
     },
-    "C_snapshot_minus_033_bloc": {
+    "F": {
       "003": 95,
       "056": 108
     },
-    "D_reviewed_final": {
-      "003": 71,
-      "056": 78
+    "G": {
+      "003": 99,
+      "056": 243
     }
   },
   "votes_per_qualified_account": 3,
   "cutoff": "2026-10-24 00:00 UTC+8",
   "source": "data/raw/TapeCode_Test1_NFT设计大赛_投票公示明细.xlsx",
-  "verdicts": "data/conclusions/verification_worksheet.csv"
+  "verdicts": "data/conclusions/verification_worksheet.csv",
+  "one_vote_addresses": {
+    "003": {
+      "total": 4,
+      "passed": 1,
+      "not_passed": 3
+    },
+    "056": {
+      "total": 78,
+      "passed": 6,
+      "no_valid_content": 5,
+      "submission_time_concentrated_by_database": 67
+    }
+  },
+  "note": "1 票地址中 67 个因提交时间高度集中而未通过，依据基金会数据库口径，公开材料不列名单；本人认为有误可在 GitHub 提 issue 申诉。"
 }
